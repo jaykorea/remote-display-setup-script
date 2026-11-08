@@ -23,6 +23,8 @@ Section "Monitor"
     Modeline "2560x1440" 312.25 2560 2752 3024 3488 1440 1443 1448 1493 -hsync +vsync
     Modeline "3440x1440" 319.75 3440 3488 3520 3600 1440 1443 1453 1481 +hsync -vsync
     Modeline "3441x1440" 320.50 3441 3496 3528 3608 1440 1443 1453 1481 +hsync -vsync
+    # Xorg dummy rejects the standard CVT reduced-blanking timing for 3680x1440.
+    Modeline "3680x1440" 341.75 3680 3736 3768 3848 1440 1443 1453 1481 +hsync -vsync
     Modeline "3840x2160" 533.00 3840 3888 3920 4000 2160 2163 2168 2222 +hsync -vsync
     Modeline "3840x2400" 592.25 3840 3888 3920 4000 2400 2403 2409 2469 +hsync -vsync
 EndSection
@@ -36,7 +38,7 @@ Section "Screen"
     SubSection "Display"
         Depth 24
         Virtual 3840 2400
-        Modes "3440x1440" "3441x1440" "2560x1440" "1920x1080" "1280x720" "3840x2160" "3840x2400"
+        Modes "3440x1440" "3441x1440" "3680x1440" "2560x1440" "1920x1080" "1280x720" "3840x2160" "3840x2400"
     EndSubSection
 EndSection
 EOF
